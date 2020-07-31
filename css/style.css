@@ -1,0 +1,268 @@
+/* un autre moyen d'importer un FONT, plutot que d'inclure le lien dans le HTML, je peux l'importer comme ca dans mon style */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
+
+
+              /* BASE STYLES */
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background: #fff;
+  color: #333;
+  line-height:1.6;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+h1, h2 {
+  font-weight: 300px;
+  line-height: 1.2;
+}
+
+p{
+  margin : 10px 0;
+}
+
+img {
+  width: 100%;
+}
+
+            /* NAVBAR */
+
+.navbar {
+  display: flex;
+  align-items: center;  
+  justify-content: space-between;
+  background: #333;
+  color: #fff;
+  opacity: 0.8;
+  width: 100%;
+  height: 70px;
+  position: fixed;
+  top: 0px;
+  padding: 0 5vw;
+  /* liée au java script */
+  /* ca permet aux effet d'apparaitre progressivement plustot que d'un coup */
+  transition: 0.25s ease-in;
+}
+
+.navbar ul {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+}
+
+.navbar a{
+  color: #fff;
+  padding: 10px 20px;
+}
+
+.navbar a:hover {
+  border-bottom: solid 2px #28a745;
+}
+
+/* si on a la classe navbar et top le back ground disparait */
+/* on va ensuite retirer la class .top sous certaines conditions */
+.navbar.top {
+  background: transparent;
+}
+
+
+            /* Hero */
+
+#hero {
+  background: url("../img/home/showcase.jpg") center center/cover no-repeat;
+  height: 100vh;
+  /* min heigh pour mode paysage toute petites heigh, que ca entre pas le titre dans la navbar */
+  min-height: 400px;
+  /* pourquoi relative ? pour l'overlay qui arrive après et qui doit être absolute dans hero */
+  position: relative;
+  background-color: #fff;
+}
+
+#hero .content {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+  /* padding top pour que quand width tout petit, le content ne soit pas poussé vers le haut dans la nav bar mais en bas */
+  padding: 100px 5vw 0 5vw;
+}
+
+#hero .content h1 {
+  font-size: 55px;
+
+}
+
+#hero .content p {
+  font-size: 22px;
+  margin-top: 7vh;
+  margin-bottom: 5vh;
+  /* max width donc ca revient a la ligne avant d'aller trop loin guache droite */
+  max-width: 1200px;
+}
+
+/* je vais inséré quelquechose directement en CSS */
+/* on pourrait inséré du contenu dans content mais préférable de le faire en html */
+/* ici on va juste coller un background noir transparent pour effet de transparance */
+/* que je mette before ou after change rien, car je le dispose à l'intérieur de Hero. Ca aurait pu être un div dans le html mais on dira que ca fait plus clean si tout l'effet est uniquement dans le css */
+
+#hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* RGBA avec 4 chiffres, le dernier est l'opacity */
+  /* si on met noir + transparant, ca fait cet effect background */
+  background:rgba(0,0,0,0.6);
+}
+
+/* tout ce qui est dans hero passera devant hero (normal) et devant le reste (notamment le background transparent que j'ai inséré au dessus) */
+/* automatiquement le before est devant le Hero mais uniquement la hero grace a ca puisque tout ce qui est dedans passe devant. C'est infiniment plus simple que de faire les z-index 1 a 1, notamment que certains éléments ne sont même pas dans cette partie du CSS */
+#hero * {
+  z-index: 10;
+}
+
+#hero.blog {
+  background: url("../img/home/blog.jpg") center center/cover no-repeat;
+  height: 30vh;
+  min-height: 200px;
+}
+#hero.blog .content { 
+  padding-top: 50px;
+}
+
+
+      /* ABOUT_ICONS*/
+
+#about_icons {
+  padding: 5vh 0;
+}
+
+
+#about .box i {
+  background: #28a745;
+  border-radius: 50%;
+  color: #fff;
+  padding: 1rem;
+  margin-bottom: 3vh;
+}
+
+
+
+      /* CASES */
+
+#cases .img:hover {
+  opacity: 0.7
+}
+
+#cases .column .img{
+  margin-bottom: 1vh;
+}
+
+#cases .column {
+  margin: 0 0.25vw;
+}
+
+      /* Team */
+
+#team img {
+  border-radius: 50%;
+}
+
+      /* FORM */
+
+
+#contact h2 {
+  margin-bottom: 5vh;
+}
+
+#contact .form-control  {
+  margin-bottom: 2vh;
+}
+
+#contact form {
+  width: 100%;
+}
+
+#contact .form-control input {
+  height: 40px;
+  border: #f5f5f5 solid 1px;
+  width: 100%;
+  padding: 4px;
+}
+
+#contact .form-control input:focus {
+ outline: 2px solid  #28a745;
+}
+
+      /* FOOTER */
+
+#footer {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  padding : 3vh 0
+}
+
+#footer #social a {
+  color: #fff;
+  font-size: 2rem;
+  margin: 0 1vw;
+}
+
+#footer #social a:hover {
+  color: #28a745 ;
+}
+
+        /* MEDIA QUERRY */
+
+@media (max-width: 768px) {
+  #navbar {
+    flex-direction: column;
+  }
+  
+  #navbar a{
+    padding: 5px 3vw;
+  }
+
+  .flex-items {
+    flex-direction: column;
+  }
+
+  .flex-items p{
+    margin-bottom: 3rem;
+  }
+
+  #team_content img {
+    width: 60%;
+  }
+
+/* on aurait pu juste faire la mpeme manip que flex-item mais ca faisait merder les marges sous les dernières img de chaque colonne de CASES et ca ne s'appliquait pas à BLOG car le Reverse Row, plus spécifique prennait le dessus. */
+/* donc pluys simple de juste demander a chaque column de grow 100% width de son container qui a le width de la page du coup la suivante apparait en dessous */
+  .flex-columns .column {
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+
+

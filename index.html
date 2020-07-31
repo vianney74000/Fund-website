@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- pour l'icone dans bare adresse -->
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+  <!-- J'ai cliqu" sur le copy link tag de font awesome trouvé sur CDNJS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
+  <!-- pour l'effet gallerie, on renvoie vers le CSS qu'on a copié sur lightbbox -->
+  <link rel="stylesheet" href="css/lightbox.min.css">
+  <link rel="stylesheet" href="css/utilities.css">
+  <!-- important, utilities d'abord comme ca on peut over wright dans le style -->
+  <link rel="stylesheet" href="css/style.css">
+  <title>Bienvenue sur notre site d'investissement</title>
+</head>
+
+<body id="home">
+
+  <header id="hero">
+    <div id="navbar" class="navbar top">
+      <h1 class="logo">
+        <span class="text-primary"><i class="fas fa-book-open"></i>Fond</span>ucon
+      </h1>
+      <nav>
+        <ul>
+          <!-- comment faire un menu déroulant !!! -->
+          <!-- cette technique permet au lien de rediriger vers cette page (le #) vers l'élément dont l'ID est : le texte marqué a coté du #
+          plus qu'a donné cet ID aux bons divs et c'est joué  -->
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#cases">Cases</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="content">
+      <h1>The Sky Is The Limit</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, dolorem.</p>
+      <a href="#about" class="btn btn-primary"><i class="fas fa-chevron-right"></i>Read more</a>
+    </div>
+  </header>
+
+  <main>
+
+    <section id="about" class="bg-light">
+      <div id="about_icons" class="flex-items"> 
+        <div class="box">
+          <i class="fas fa-university fa-2x"></i>
+          <div>
+            <h3>Investment banking</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo, voluptatum?</p>
+          </div>
+        </div>
+        <div class="box">
+          <i class="fas fa-book-reader fa-2x"></i>
+          <div>
+            <h3>Portfoglio manager</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo, voluptatum?</p>
+          </div>
+        </div>
+        <div class="box">
+          <i class="fas fa-pencil-alt fa-2x"></i>
+          <div>
+            <h3>Tax and custodial</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo, voluptatum?</p>
+          </div>
+        </div>
+      </div>
+        <div id="about_solutions" class="flex-columns">
+          <!-- on est obligé d'ajouter ces deux div "column" alors qu'instinctivement on voudrait les virer -->
+          <!-- si on le fait pas le bouton  "more information" s'étend sur tout son blok -->
+          <!-- car on demande au block dans lequel il se trouve de s'étirer jusqu'au bout, il faut dont un niveau de distance supplémentaire, d'ou la création de ce block intermédiaire a qui on demande de s'étirer -->
+          <div class="column">
+            <div class="img">
+              <img src="img/home/people.jpg" alt="Image">
+            </div>
+          </div>
+          <div class="column">
+            <div class="content bg-primary">
+              <h4>What you are looking for</h4>
+              <h2 class="large-heading" >We provide bespoke solution</h2>
+              <p>we suck your money Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad, in! Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto corporis provident aliquam amet expedita sit.</p>
+              <a class="btn btn-ouline" href="#">
+                <i class="fas fa-chevron-right"></i>
+                Read More
+              </a>
+            </div>
+          </div> 
+        </div>
+    </div>
+
+    <section id="cases" class="section-padding">
+      <header class="section-header">
+        <h4>This Is What We Do</h4>
+        <h2 class="large-heading">Business Cases</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur facere omnis voluptatibus. Natus, debitis numquam!</p>
+      </header>
+      <div class="flex-columns">
+        <div class="column">
+          <div class="img">
+            <a 
+              href="img/cases/cases1.jpg"
+              data-lightbox="cases"
+              data-title="blablbaablabla">
+                <img src="img/cases/cases1.jpg" alt="">
+            </a>
+          </div>
+          <div class="img">
+            <a 
+              href="img/cases/cases2.jpg"
+              data-lightbox="cases"
+              data-title="blablbaablabla">
+                <img src="img/cases/cases2.jpg" alt="">
+            </a>
+          </div>
+        </div>
+        <div class="column">
+          <div class="img">
+            <a 
+              href="img/cases/cases3.jpg"
+              data-lightbox="cases"
+              data-title="blablbaablabla">
+                <img src="img/cases/cases3.jpg" alt="">
+            </a>
+          </div>
+          <div class="img">
+            <a 
+              href="img/cases/cases4.jpg"
+              data-lightbox="cases"
+              data-title="blablbaablabla">
+                <img src="img/cases/cases4.jpg" alt="">
+            </a>
+          </div>
+        </div>        
+        <div class="column">
+          <div class="img">
+            <a 
+              href="img/cases/cases5.jpg"
+              data-lightbox="cases"
+              data-title="blablbaablabla">
+                <img src="img/cases/cases5.jpg" alt="">
+            </a>
+          </div>
+          <div class="img">
+            <a 
+              href="img/cases/cases6.jpg"
+              data-lightbox="cases"
+              data-title="blablbaablabla">
+                <img src="img/cases/cases6.jpg" alt="">
+            </a>
+          </div>
+        </div>        
+        <div class="column">
+          <div class="img">
+            <a 
+              href="img/cases/cases7.jpg"
+              data-lightbox="cases"
+              data-title="blablbaablabla">
+                <img src="img/cases/cases7.jpg" alt="">
+            </a>
+          </div>
+          <div class="img">
+            <a 
+              href="img/cases/cases8.jpg"
+              data-lightbox="cases"
+              data-title="blablbaablabla">
+                <img src="img/cases/cases8.jpg" alt="">
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="blog" class="flex-columns flex-reverse">
+      <div class="column">
+        <div class="img">
+          <img src="img/home/blog.jpg" alt="Image">
+        </div>
+      </div>
+      <div class="column">
+        <div class="content bg-secondary">
+          <h4>Le 30 Mai 2020</h4>
+          <h2 class="large-heading" >Blog Post One</h2>
+          <p>we suck your money Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad, in! Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto corporis provident aliquam amet expedita sit.</p>
+          <a class="btn btn-ouline" href="blog.html" target="_blank">
+            <i class="fas fa-chevron-right"></i>
+            Read More
+          </a>
+        </div>
+      </div> 
+    </section>
+
+    <section id="team">
+      <header class="section-header">
+        <h4>Who we are</h4>
+        <h2 class="large-heading">Our Brilliant Team</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur facere omnis voluptatibus. Natus, debitis numquam!</p>
+      </header>
+      <div id="team_content" class="flex-items section-padding"> 
+        <div class="box">
+          <div>
+            <img src="img/team/person1.jpg" alt="Image">
+            <h3>Shrutika singh</h3>
+            <p>Head Of Annoyance</p>
+          </div>
+        </div>
+        <div class="box">
+          <div>
+            <img src="img/team/person3.jpg" alt="Image">
+            <h3>Monsieur Dupuis</h3>
+            <p>Technicien du fond du trou</p>
+          </div>
+        </div>
+        <div class="box">
+          <div>
+            <img src="img/team/person2.jpg" alt="Image">
+            <h3>Vianney Hiron</h3>
+            <p>CEO & President</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  <Section id="contact">
+    <div id="about_solutions" class="flex-columns">
+      <div class="column">
+        <div class="img">
+          <img src="img/home/contact.jpg" alt="Image">
+        </div>
+      </div>
+      <div class="column">
+        <div class="content bg-light">
+          <h2 class="large-heading" >Request A Callback</h2>
+          <!-- les réponses envoyées vont être envoyé et traités par ce script -->
+          <!-- apparemment quand on submit une forme il faut que la méthode soit POST -->
+          <form action="process.php" method="POST">
+            <div class="form-control">
+              <input type="text" id="name" name="name" placeholder="Enter Your Name">
+            </div>
+            <div class="form-control">
+              <input type="email" id="email" name="email" placeholder="Enter Your e-mail">
+            </div>
+            <div class="form-control">
+              <input type="text" id="phone" name="phone" placeholder="Enter Your Phone">
+            </div>
+            <div class="form-control">
+             <input type="submit" id="submit" value="send" class="btn btn-primary">
+            </div>
+          </form>
+        </div>
+      </div> 
+    </div>
+  </Section>   
+
+</main>
+
+<footer id="footer" class="bg-dark" >
+  <div id="social">
+    <a href="#"> 
+      <i class="fab fa-facebook"></i>  
+    </a>
+    <a href="#"> 
+      <i class="fab fa-twitter"></i>  
+    </a>
+    <a href="#"> 
+      <i class="fab fa-linkedin"></i>  
+    </a>
+  </div>
+  <p> Copyright &copy; 2020 Fonducon </p>
+</footer>
+
+<!-- Jquerry pour le smooth défilement quand on clic sur une section -->
+<!-- il fallait que ce soit au dessus du script qu'on a fait apparemment. -->
+<!-- on a coprié ce qu'on a trouvé en minified 3.x ce ce site https://code.jquery.com/ -->
+<!-- le reste de la querry est après notre custome one -->
+<script 
+  src="https://code.jquery.com/jquery-3.5.1.js" 
+  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" 
+  crossorigin="anonymous">
+</script>
+
+<!-- pour la gallerie. On dit simpleme,t d'aller voir le script JS qu'on a copié depuis lightbox2 -->
+<script src="js/lightbox.min.js"></script>
+
+
+<!-- Script JS pour laisse navbar background transparent quand on est en haut de la page pour faire plus clean -->
+<!-- cette section est commentée car on va devoir ajouter du code dedans pour ajouter des effets, ce permet une compréhenssion progressive de la voir d'avord. -->
+<!-- la décommenter pour mieux comprendre -->
+
+<!-- <script>
+  // grab nav bar and put in javascript variable wwith an id of navbar
+  const navbar = document.getElementById('navbar');
+
+  // Quand un event arrive : On scroll - on veut lancer une fonction
+  window.onscroll = function() {
+    // regarde ou en est sur l'axe Y de la page, si on a scroll down au moin 100px
+    if(window.pageYOffset >100) {
+      // then remove the class top de Navbar
+      navbar.classList.remove('top');
+    } else {
+      // sinon on remet top. Si on fait pas ca, top ne revient pas quand on rescroll vers le haut
+      navbar.classList.add('top');
+    }
+  }
+</script> -->
+
+<!-- Script pour l'effet qui montre une barre d'en haut qui tombe et non qui seulement apparait comme ça -->
+
+
+<script>
+  const navbar = document.getElementById('navbar');
+    //  on initie une variable. Ca veut dire, on a pas encore commencé à scroll
+  let scrolled = false
+
+  window.onscroll = function() {
+    if(window.pageYOffset >100) {
+      navbar.classList.remove('top');
+      // Condition dans la condition. Si Not Scrolled
+      if(!scrolled) {
+        // On créé du CSS directement dans la fonction - on ajoute Transform qui est du CSS
+        // translate Y moove things along the Y axis
+        // ca dit, quand on atteint les 100px, on envoie la navbar up 70px ce qui la sort de l'écran, donc elle disparait
+        navbar.style.transform = 'translateY(-70px)';
+      }
+      // après 200 milisecondes (para 2) on remet la navbar au bon endroit (para 1)
+      setTimeout(function(){
+        navbar.style.transform = 'translateY(0px)';
+        scrolled = true;
+      } , 200);
+    } else {
+      navbar.classList.add('top');
+      scrolled = false;
+    }
+  }
+
+// Smooth scrolling
+  
+  // select liens et btn (en fait on a retiré btn car il s'avère que la même classe est utilisé pour le bouton de la Form et que ce code nullifie l'action par défaut associé au clics sur ces classes, or ca empecherait donc l'action de subission de la form puisque Submit a une classe de btn) - quand on click dessus, active la fonction e
+  $('#navbar a ').on('click', function (e) {
+    if (this.hash !=='') {
+      e.preventDefault();
+
+      const hash = this.hash;
+
+      // si le if est respecter, on annime le html et le body
+      $('html, body').animate(
+        {
+          // on scroll top jusqu'a hash qui est en fait this.hash
+          // les -100 sont pour qu'on arrive un peu au dessus et non en plein dedans - élégance
+          scrollTop: $(hash).offset().top - 100
+        },
+        // le 400 détermine la vitesse à laquelle ca va défiller plus haut plus lent
+        400
+      );
+    }
+  });
+  
+
+</script>
+
+
+
+</body>
+</html>

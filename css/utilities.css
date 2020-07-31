@@ -1,0 +1,142 @@
+    /* text colors */
+
+.text-primary {
+  color: #28a745;
+}
+
+.text-secondary {
+  color: #0284d0;
+}
+
+    /* button & background */
+
+.btn {
+  border-radius: 5px;
+  padding: 10px 30px;
+  display: inline-block;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-primary, .bg-primary {
+  background: #28a745 ;
+  color: #fff;
+}
+
+.btn:hover{
+  opacity: 0.9;
+}
+
+.btn-secondary, .bg-secondary {
+  background: #0284d0;
+  color: #fff;
+}
+
+.btn-dark, .bg-dark {
+  background: #333;
+  color: #fff;
+}
+
+.btn-light, .bg-light{
+  background: #f4f4f4 !important ;
+  color: #333 ;
+}
+
+.btn-ouline {
+  background:transparent !important ;
+  color: #fff ;
+  border: #fff solid 1px;
+}
+
+/* font and padding */
+
+.large-heading {
+  font-weight: 200;
+  font-size: 40px;
+  margin: 2vh 0;
+}
+
+.section-padding{
+  padding: 4vh 2vw;
+}
+
+      /* flex item */
+
+.flex-items {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  height: 100%;
+}
+
+/* identifie le premier div child le plus directe */
+.flex-items > div {
+  padding: 0 2vw;
+}
+
+        /* FLEXE COLUMN */
+
+/* en temps normal, ca servirait a rien car flex-columns vu qu'en dessous, prendrait le dessus, même pour les éléments qui ont flex-reverse (si tant est qu'ils aient aussi la class de flex columns) mais ici vu que j'ai précisé 2classes en les métant sans espace, c'est encore plus spécifique et ca prend le dessus sur code posterieur */
+.flex-reverse.flex-columns {
+  flex-direction: row-reverse;
+}
+
+.flex-columns {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.flex-columns .column {
+display: flex;
+flex-direction: column;
+flex-basis: 100%;
+/* si on met just flex : 1 - ca revient a mettre Flex : 1 1 0 */
+/* donc je ne comprend pas pourquoi ce flex basis 100% au dessus */
+flex: 1;
+}
+
+/* de base, flex va alligner les div direct en dessous et leur donner la même height, la height requise pour le plus long d'entre eux */
+/* vu que back ground sur un div inferieur, il n'est pas concerné par ca et donc ca height est égale a son contenu */
+/* donc pour que son background recouvre tout, il faut le mettre a 100% */
+/* pareil pour celui de la photo mais pour lui il faut aussi l'étape d'après */
+.flex-columns .column .img,
+.flex-columns .column .content {
+  height: 100%;
+  width: 100%;
+}
+
+/* il faut cette étape je pense car vu que c'est une photo, on doit la target spécifiquement l'image en tant qu'image */
+.flex-columns img {
+  width: 100%;
+  height: 100%;
+  /* ca revient a dire cover si ca avait été un background image */
+  object-fit: cover;
+}
+
+.flex-columns .content {
+  padding: 3vh 3vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  
+  align-items: start;
+}
+
+.flex-columns .content p {
+  margin-bottom: 3vh;
+}
+
+/* Section header */
+
+.section-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4vh 0;
+}
+
+
+
